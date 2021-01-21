@@ -27,7 +27,11 @@ exports.up = async knex => knex.schema.createTable('users', table => {
     .notNullable()
   
   table
-    .string('bio')
+    .text('bio')
+  
+  table
+    .datetime('createdAt', precision)
+    .notNullable()
 
   table.timestamps(true)
 })

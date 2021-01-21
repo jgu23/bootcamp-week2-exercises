@@ -9,7 +9,7 @@ exports.up = async knex => knex.schema.createTable('posts', table => {
         .integer('posterId')
         .notNullable()
     
-    table.foreign('requestedId').references('id').inTable('users')
+    table.foreign('posterId').references('users.id')
   
     table
         .integer('likes')
@@ -17,7 +17,11 @@ exports.up = async knex => knex.schema.createTable('posts', table => {
         .notNullable()
     
     table
-      .string('post')
+      .text('post')
+      .notNullable()
+    
+    table
+      .date('postedAt')
       .notNullable()
   
     table.timestamps(true)
