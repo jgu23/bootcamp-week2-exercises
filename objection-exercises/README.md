@@ -1,6 +1,6 @@
 # Day 7 AM: Basic Objection Models & Queries
 
-This morning we'll get started using [Objection.js](https://vincit.github.io/objection.js/). You can create a new database with ElephantSQL, or use the same database credentials as yesterday. If you do the latter, make sure to **rollback** before trying to doing today's exercises. There is already a full set of migrations and seed data installed that we'll use to practice Objection (So you'll need to add your database creds to the .env and run `npm run migrate && npm run seed` again). Once you've set up your database, follow the steps below.
+This morning we'll get started using [Objection.js](https://vincit.github.io/objection.js/). You can create a new database with ElephantSQL, or use the same database credentials as yesterday. If you do the latter, make sure to **rollback** before trying to doing today's exercises. There is already a full set of migrations and seed data installed that we'll use to practice Objection (So you'll need to add your database creds to the .env and run `npx knex migrate:latest && npx knex seed:run` again). Once you've set up your database, follow the steps below.
 
 ### Writing Models
 
