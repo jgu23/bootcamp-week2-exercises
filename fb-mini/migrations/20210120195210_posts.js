@@ -23,8 +23,6 @@ exports.up = async knex => knex.schema.createTable('posts', table => {
     table
       .date('postedAt')
       .notNullable()
-  
-    table.timestamps(true)
-})
+  })
 
 exports.down = async knex => knex.schema.dropTableIfExists('posts')
