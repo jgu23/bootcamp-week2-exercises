@@ -9,16 +9,20 @@ const run = async () => {
 
   // Get all users and their pets
   const usersAndPets = await User.query().withGraphFetched('pet')
-  console.log(usersAndPets)
+  console.dir(usersAndPets, { depth: null })
 
   // Get all users, their pets, AND their children
   const usersPetsAndChildren = await User.query().withGraphFetched('[pet, child]')
-  console.log(usersPetsAndChildren)
+  console.dir(usersPetsAndChildren, { depth: null })
 
   // Get all users, their parents, and their grandparents
+  const usersPetsParentsGrandparents = await User.query().withGraphFetched('[parent, parent.parent]')
+  console.dir(usersPetsParentsGrandparents, { depth: null })
 
   // Get all users, their pets, their chilren, and their childrens' pets
-
+  const usersPetsChildrenChildrenspets = await User.query().withGraphFetched('[pet, child, child.pet]')
+  console.dir(usersPetsChildrenChildrenspets, { depth: null })
+  
   // -----
   cleanup()
 }
