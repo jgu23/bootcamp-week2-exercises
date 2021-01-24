@@ -6,7 +6,7 @@ const run = async () => {
   // Write Queries and Logs Here !!!
 
   // Delete all CATS
-  const deleteCats = await Pet.query().delete().where('type', 'CAT')
+  const deleteCats = await Pet.query().delete().where('type', 'CAT').returning('*')
   console.log(deleteCats)
   
   // -----

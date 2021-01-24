@@ -9,19 +9,20 @@ const run = async () => {
   // Insert yourself in the users table
 
   const jeffrey = await User.query().insert({
+    id: 'b0c3eb70-4edf-4f1d-93e4-adc7e5a293b4',
     email: 'jgu3661@gmail.com',
     firstName: 'Jeffrey',
     lastName: 'Gu',
     age: 19,
-  })
+  }).returning('*')
   console.log(jeffrey)
 
   // Insert a pet belonging to you (get your ID from Postico or DBeaver)
   const froog = await Pet.query().insert({
-    ownerId: 'cd09db1b-0176-4986-8ac8-e52ef82b557c',
+    ownerId: 'b0c3eb70-4edf-4f1d-93e4-adc7e5a293b4',
     type: 'DOG',
     name: 'froog',
-  })
+  }).returning('*')
   console.log(froog)
 
   // -----

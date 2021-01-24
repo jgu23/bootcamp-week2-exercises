@@ -9,7 +9,6 @@ class User extends BaseModel {
 
   static get relationMappings() {
     const Pet = require('./Pet')
-    const Relation = require('./Relation')
     return {
       pet: {
         relation: HasManyRelation,
@@ -44,6 +43,18 @@ class User extends BaseModel {
         },
       },
     }
+  }
+
+  static get virtualAttributes() {
+    return ['fullName', 'isAdult']
+  }
+
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`
+  }
+
+  get isAdult() {
+    return this.age >= 18
   }
 }
 
